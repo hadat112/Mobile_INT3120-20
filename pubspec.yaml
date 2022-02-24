@@ -63,13 +63,12 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - ./assets/smiley.png
-    
-    - ./assets/floppydisk.jpg
-    - ./assets/iphone.jpg
-    - ./assets/laptop.jpg
-    - ./assets/pendrive.jpg
-    - ./assets/pixel.jpg
-    - ./assets/tablet.jpg
+    - ./assets/floppydisk.jpeg
+    - ./assets/iphone.jpeg
+    - ./assets/laptop.jpeg
+    - ./assets/pendrive.jpeg
+    - ./assets/pixel.jpeg
+    - ./assets/tablet.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
