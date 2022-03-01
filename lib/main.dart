@@ -94,7 +94,6 @@ class _RatingBoxState extends State<RatingBox> {
 
   Widget build(BuildContext context) {
     double _size = 20;
-    print(_rating);
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.end,
@@ -143,7 +142,10 @@ class ProductBox extends StatelessWidget {
   final int price;
   final String image;
 
+
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+
     return Container(
         padding: EdgeInsets.all(2),
         height: 140,
@@ -151,7 +153,10 @@ class ProductBox extends StatelessWidget {
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Image.asset("assets/" + image),
+              Image.asset("assets/" + image,
+                  height: 100,
+                  width: width*0.3
+              ),
               Expanded(
                 child: Container(
                   padding: EdgeInsets.all(5),
