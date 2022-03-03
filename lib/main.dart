@@ -141,7 +141,9 @@ class RatingBox extends StatelessWidget{
 class ProductBox extends StatelessWidget {
   ProductBox({Key ? key, required this.item}) : super(key: key);
   final Product item;
+
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Container(
         padding: EdgeInsets.all(2),
         height: 140,
@@ -149,7 +151,10 @@ class ProductBox extends StatelessWidget {
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Image.asset("assets/" + this.item.image),
+                Image.asset("assets/" + this.item.image,
+                  height: 100,
+                  width: width*0.3
+                ),
                 Expanded(
                     child: Container(
                         padding: EdgeInsets.all(5),

@@ -25,34 +25,34 @@ class Product extends Model {
         Product(
             "Pixel",
             "Pixel is the most feature-full phone ever", 800,
-            "pixel.jpg", 0
+            "pixel.jpeg", 0
         )
     );
     items.add(
         Product(
             "Laptop", "Laptop is most productive development tool", 2000,
-            "laptop.jpg", 0
+            "laptop.jpeg", 0
         )
     );
     items.add(
         Product(
             "Tablet",
             "Tablet is the most useful device ever for meeting", 1500,
-            "tablet.jpg", 0
+            "tablet.jpeg", 0
         )
     );
     items.add(
         Product(
             "Pendrive",
             "Pendrive is useful storage medium",
-            100, "pendrive.jpg", 0
+            100, "pendrive.jpeg", 0
         )
     );
     items.add(
         Product(
             "Floppy Drive",
             "Floppy drive is useful rescue storage medium", 20,
-            "floppy.jpg", 0
+            "floppydisk.jpeg", 0
         )
     );
     return items;
