@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'Product.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -16,116 +19,117 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
+  final items = Product.getProducts();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title:Text("Product Listing")),
-        body: ListView(
-          shrinkWrap: true, padding: const EdgeInsets.fromLTRB(2.0, 10.0, 2.0, 10.0),
-          children: <Widget> [
-            ProductBox(
-                name: "iPhone",
-                description: "iPhone is the stylist phone ever",
-                price: 1000,
-                image: "iphone.jpeg"
-            ),
-            ProductBox(
-                name: "Pixel",
-                description: "Pixel is the most featureful phone ever",
-                price: 800,
-                image: "pixel.jpeg"
-            ),
-            ProductBox(
-                name: "Laptop",
-                description: "Laptop is most productive development tool",
-                price: 2000,
-                image: "laptop.jpeg"
-            ),
-            ProductBox(
-                name: "Tablet",
-                description: "Tablet is the most useful device ever for meeting",
-                price: 1500,
-                image: "tablet.jpeg"
-            ),
-            ProductBox(
-                name: "Pendrive",
-                description: "Pendrive is useful storage medium",
-                price: 100,
-                image: "pendrive.jpeg"
-            ),
-            ProductBox(
-                name: "Floppy Drive",
-                description: "Floppy drive is useful rescue storage medium",
-                price: 20,
-                image: "floppydisk.jpeg"
-            ),
-          ],
+        body: ListView.builder(
+            itemCount: items.length,
+            itemBuilder: (context, index) {
+              return ProductBox(item: items[index]);
+            },
         )
+
+
+        // body: ListView(
+        //   shrinkWrap: true, padding: const EdgeInsets.fromLTRB(2.0, 10.0, 2.0, 10.0),
+        //   children: <Widget> [
+        //     ProductBox(
+        //         name: "iPhone",
+        //         description: "iPhone is the stylist phone ever",
+        //         price: 1000,
+        //         image: "iphone.jpeg"
+        //     ),
+        //     ProductBox(
+        //         name: "Pixel",
+        //         description: "Pixel is the most featureful phone ever",
+        //         price: 800,
+        //         image: "pixel.jpeg"
+        //     ),
+        //     ProductBox(
+        //         name: "Laptop",
+        //         description: "Laptop is most productive development tool",
+        //         price: 2000,
+        //         image: "laptop.jpeg"
+        //     ),
+        //     ProductBox(
+        //         name: "Tablet",
+        //         description: "Tablet is the most useful device ever for meeting",
+        //         price: 1500,
+        //         image: "tablet.jpeg"
+        //     ),
+        //     ProductBox(
+        //         name: "Pendrive",
+        //         description: "Pendrive is useful storage medium",
+        //         price: 100,
+        //         image: "pendrive.jpeg"
+        //     ),
+        //     ProductBox(
+        //         name: "Floppy Drive",
+        //         description: "Floppy drive is useful rescue storage medium",
+        //         price: 20,
+        //         image: "floppydisk.jpeg"
+        //     ),
+        //   ],
+        // )
     );
   }
 }
 
-class RatingBox extends StatefulWidget {
-  @override
-  _RatingBoxState createState() =>
-      _RatingBoxState();
-}
-
-class _RatingBoxState extends State<RatingBox> {
-  int _rating = 0;
-  void _setRatingAsOne() {
-    setState(() {
-      _rating = 1;
-    });
-  }
-
-  void _setRatingAsTwo() {
-    setState(() {
-      _rating = 2;
-    });
-  }
-
-  void _setRatingAsThree() {
-    setState(() {
-      _rating = 3;
-    });
-  }
+class RatingBox extends StatelessWidget{
+  RatingBox({Key? key, required this.item}) : super (key:key);
+  final Product item;
 
   Widget build(BuildContext context) {
     double _size = 20;
+    print(item.rating);
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisSize: MainAxisSize.max,
-      children: <Widget> [
+      children: <Widget>[
         Container(
           padding: EdgeInsets.all(0),
           child: IconButton(
-            icon: (_rating >= 1 ? Icon(Icons.star, size: _size,) :
-            Icon(Icons.star_border, size: _size,)),
+            icon: (
+                item.rating >= 1? Icon( Icons.star, size: _size, )
+                    : Icon( Icons.star_border, size: _size, )
+            ),
             color: Colors.red[500],
-            onPressed: _setRatingAsOne,
+            onPressed: () => this.item.updateRating(1),
             iconSize: _size,
           ),
         ),
         Container(
           padding: EdgeInsets.all(0),
           child: IconButton(
-            icon: (_rating >= 2 ? Icon(Icons.star, size: _size,) :
-            Icon(Icons.star_border, size: _size,)),
+            icon: (item.rating >= 2
+                ? Icon(
+              Icons.star,
+              size: _size,
+            )
+                : Icon(
+              Icons.star_border,
+              size: _size,
+            )
+            ),
             color: Colors.red[500],
-            onPressed: _setRatingAsTwo,
+            onPressed: () => this.item.updateRating(2),
             iconSize: _size,
           ),
         ),
         Container(
           padding: EdgeInsets.all(0),
           child: IconButton(
-            icon: (_rating >= 3 ? Icon(Icons.star, size: _size,) :
-            Icon(Icons.star_border, size: _size,)),
+            icon: (
+                item.rating >= 3 ?
+                Icon( Icons.star, size: _size, )
+                    : Icon( Icons.star_border, size: _size, )
+            ),
             color: Colors.red[500],
-            onPressed: _setRatingAsThree,
+            onPressed: () => this.item.updateRating(3),
             iconSize: _size,
           ),
         ),
@@ -135,46 +139,157 @@ class _RatingBoxState extends State<RatingBox> {
 }
 
 class ProductBox extends StatelessWidget {
-  ProductBox({Key? key, required this.name, required this.description, required this.price, required this.image})
-      : super(key: key);
-  final String name;
-  final String description;
-  final int price;
-  final String image;
-
-
+  ProductBox({Key ? key, required this.item}) : super(key: key);
+  final Product item;
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-
     return Container(
         padding: EdgeInsets.all(2),
         height: 140,
         child: Card(
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Image.asset("assets/" + image,
-                  height: 100,
-                  width: width*0.3
-              ),
-              Expanded(
-                child: Container(
-                  padding: EdgeInsets.all(5),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Text(this.name, style: TextStyle(fontWeight:
-                      FontWeight.bold)),
-                      Text(this.description),
-                      Text("Price: " + this.price.toString()),
-                      RatingBox(),
-                    ],
-                  )
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Image.asset("assets/" + this.item.image),
+                Expanded(
+                    child: Container(
+                        padding: EdgeInsets.all(5),
+                        child: ScopedModel<Product>(
+                            model: this.item, child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Text(
+                                this.item.name, style: TextStyle(
+                                fontWeight: FontWeight.bold
+                            )
+                            ),
+                            Text(this.item.description),
+                            Text("Price: " + this.item.price.toString()),
+                            ScopedModelDescendant<Product>(
+                                builder: (context, child, item) {
+                                  return RatingBox(item: item);
+                                }
+                            )
+                          ],
+                        )
+                        )
+                    )
                 )
-              )
-            ]
-        )
+              ]
+          ),
         )
     );
   }
 }
+
+// class RatingBox extends StatefulWidget {
+//   @override
+//   _RatingBoxState createState() =>
+//       _RatingBoxState();
+// }
+//
+// class _RatingBoxState extends State<RatingBox> {
+//   int _rating = 0;
+//   void _setRatingAsOne() {
+//     setState(() {
+//       _rating = 1;
+//     });
+//   }
+//
+//   void _setRatingAsTwo() {
+//     setState(() {
+//       _rating = 2;
+//     });
+//   }
+//
+//   void _setRatingAsThree() {
+//     setState(() {
+//       _rating = 3;
+//     });
+//   }
+//
+//   Widget build(BuildContext context) {
+//     double _size = 20;
+//     return Row(
+//       mainAxisAlignment: MainAxisAlignment.end,
+//       crossAxisAlignment: CrossAxisAlignment.end,
+//       mainAxisSize: MainAxisSize.max,
+//       children: <Widget> [
+//         Container(
+//           padding: EdgeInsets.all(0),
+//           child: IconButton(
+//             icon: (_rating >= 1 ? Icon(Icons.star, size: _size,) :
+//             Icon(Icons.star_border, size: _size,)),
+//             color: Colors.red[500],
+//             onPressed: _setRatingAsOne,
+//             iconSize: _size,
+//           ),
+//         ),
+//         Container(
+//           padding: EdgeInsets.all(0),
+//           child: IconButton(
+//             icon: (_rating >= 2 ? Icon(Icons.star, size: _size,) :
+//             Icon(Icons.star_border, size: _size,)),
+//             color: Colors.red[500],
+//             onPressed: _setRatingAsTwo,
+//             iconSize: _size,
+//           ),
+//         ),
+//         Container(
+//           padding: EdgeInsets.all(0),
+//           child: IconButton(
+//             icon: (_rating >= 3 ? Icon(Icons.star, size: _size,) :
+//             Icon(Icons.star_border, size: _size,)),
+//             color: Colors.red[500],
+//             onPressed: _setRatingAsThree,
+//             iconSize: _size,
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+// }
+
+// class ProductBox extends StatelessWidget {
+//   ProductBox({Key? key, required this.name, required this.description, required this.price, required this.image})
+//       : super(key: key);
+//   final String name;
+//   final String description;
+//   final int price;
+//   final String image;
+//
+//
+//   Widget build(BuildContext context) {
+//     double width = MediaQuery.of(context).size.width;
+//
+//     return Container(
+//         padding: EdgeInsets.all(2),
+//         height: 140,
+//         child: Card(
+//         child: Row(
+//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//             children: <Widget>[
+//               Image.asset("assets/" + image,
+//                   height: 100,
+//                   width: width*0.3
+//               ),
+//               Expanded(
+//                 child: Container(
+//                   padding: EdgeInsets.all(5),
+//                   child: Column(
+//                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                     children: <Widget>[
+//                       Text(this.name, style: TextStyle(fontWeight:
+//                       FontWeight.bold)),
+//                       Text(this.description),
+//                       Text("Price: " + this.price.toString()),
+//                       RatingBox(),
+//                     ],
+//                   )
+//                 )
+//               )
+//             ]
+//         )
+//         )
+//     );
+//   }
+// }

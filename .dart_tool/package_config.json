@@ -98,6 +98,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "scoped_model",
+      "rootUri": "file:///Users/admin/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/scoped_model-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/admin/Documents/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -158,7 +164,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-02-24T16:06:08.691654Z",
+  "generated": "2022-03-03T14:25:44.146935Z",
   "generator": "pub",
   "generatorVersion": "2.16.1"
 }
