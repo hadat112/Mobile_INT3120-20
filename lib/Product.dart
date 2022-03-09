@@ -22,6 +22,14 @@ class Product extends Model {
     List<Product> items = <Product>[];
 
     items.add(
+      Product(
+          "iPhone",
+          "iPhone is the stylist phone ever", 1000,
+          "iphone.jpeg", 0
+      )
+    );
+
+    items.add(
         Product(
             "Pixel",
             "Pixel is the most feature-full phone ever", 800,

@@ -18,7 +18,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		0nPUx6YCJovdDnjGsDQzmvZ74OU=
+		vzEQQ2cUKu4BTcg88+38fRClwCo=
 		</data>
 		<key>flutter_assets/assets/floppydisk.jpeg</key>
 		<data>
@@ -44,10 +44,6 @@
 		<data>
 		tenlnSohTKfwNnfsSNeIJ8unJGU=
 		</data>
-		<key>flutter_assets/assets/smiley.png</key>
-		<data>
-		gBSM+EGIvFHpxEreaflOE3BiVww=
-		</data>
 		<key>flutter_assets/assets/tablet.jpeg</key>
 		<data>
 		1iGErRO+oHYqR0LsdJsTrKuxg0E=
@@ -62,7 +58,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		CL0EhxNo9ReTeHQJwwcljwyCSr8=
+		/M22x50L3cEGbFWmSRUcBQxruBU=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -101,11 +97,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0nPUx6YCJovdDnjGsDQzmvZ74OU=
+			vzEQQ2cUKu4BTcg88+38fRClwCo=
 			</data>
 			<key>hash2</key>
 			<data>
-			BGLFKlogl+A1qR133KEBIP83v5xH3sPPtYGxGGZWPY8=
+			hAeQZ/fwHqnzWphyucVffdT1NElTPvmW8dTJHuDTscQ=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/floppydisk.jpeg</key>
@@ -174,17 +170,6 @@
 			1nfTF2/ku+78IarSXiHiTJJsC6f/MmwUyoMZ1AnSjEw=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/smiley.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			gBSM+EGIvFHpxEreaflOE3BiVww=
-			</data>
-			<key>hash2</key>
-			<data>
-			CqDuDbRI2rOaH85j967IqETpaKwsUJSVdtmveP71Y6A=
-			</data>
-		</dict>
 		<key>flutter_assets/assets/tablet.jpeg</key>
 		<dict>
 			<key>hash</key>
@@ -222,11 +207,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CL0EhxNo9ReTeHQJwwcljwyCSr8=
+			/M22x50L3cEGbFWmSRUcBQxruBU=
 			</data>
 			<key>hash2</key>
 			<data>
-			kq0aHG22Xgld19mggCWdWArCPa3egAtDsR8B1gw106s=
+			9I+CrVJfj/Eiq1xj8lOVzms9Pn7sFzhC+u8sFXcl0R8=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
