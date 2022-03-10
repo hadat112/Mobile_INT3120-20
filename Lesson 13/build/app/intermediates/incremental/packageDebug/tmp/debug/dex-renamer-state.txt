@@ -1,0 +1,4 @@
+#Thu Mar 10 14:08:39 ICT 2022
+base.0=/Users/admin/Documents/GitHub/Mobile_INT3120-20/Lesson 13/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
