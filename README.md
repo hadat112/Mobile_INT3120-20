@@ -22,7 +22,7 @@ StatefullWidget:
 ScopedModel: 
 <img width="1440" alt="Screen Shot 2022-03-03 at 21 56 18" src="https://user-images.githubusercontent.com/63113835/156590805-9a023eb5-32e7-4e5f-a6be-868b083ab6e5.png">
 
-#Week 3: 
+# Week 3: 
 
 Navigator and Routing: 
 <img width="1440" alt="Screen Shot 2022-03-09 at 15 24 42" src="https://user-images.githubusercontent.com/63113835/157608893-8cf5adc9-0dbf-43b3-b205-b3cfb46a830b.png">
@@ -33,4 +33,11 @@ Animation:
 Native IOS: 
 
 <img width="1440" alt="Screen Shot 2022-03-10 at 14 10 23" src="https://user-images.githubusercontent.com/63113835/157609011-9cabb813-9637-4dc0-a849-abe85170f58b.png">
+
+Package: 
+
+<img width="1440" alt="Screen Shot 2022-03-10 at 23 40 33" src="https://user-images.githubusercontent.com/63113835/157716224-ffb2ad76-41d9-4ffd-b008-3dac28864125.png">
+
+
+
 
